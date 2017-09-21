@@ -2,6 +2,8 @@
  * Retrieves plugin's index in webpack configuration
  * @param {Object} config - webpack configuration
  * @param {string} name - Plugin name
+ * @throws an exception if it cannot find requested plugin
+ * @returns {number}
  */
 function getPluginIndex(config, name) {
   const index = config.plugins.findIndex((plugin) => plugin.constructor.name === name)
@@ -10,6 +12,16 @@ function getPluginIndex(config, name) {
     throw "Could not find plugin: " + name + "\nCheck your razzle.config.js"
   }
   return index
+}
+
+/**
+ * Checks if plugin is loaded
+ * @param {Object} config - webpack configuration
+ * @param {string} name - Plugin name
+ * @returns {boolean}
+ */
+function isPluginLoaded(config, name) {
+  return config.plugins.findIndex((plugin) => plugin.constructor.name === name) !== -1
 }
 
 /**
@@ -31,6 +43,7 @@ function getPluginIndex(config, name) {
  * @param {Object} config - webpack configuration
  * @param {string} name - Plugin name
  * @param {modifyPluginFn} fn
+ * @returns result of the callback
  */
 function modifyPlugin(config, name, fn) {
   const index = getPluginIndex(config, name)
@@ -47,6 +60,7 @@ function modifyPlugin(config, name, fn) {
  * @param {Object} config - webpack configuration
  * @param {string} name - Plugin name
  * @param {modifyPluginFn} fn
+ * @returns plugin
  */
 function replacePlugin(config, name, plugin) {
   const index = getPluginIndex(config, name)
@@ -55,6 +69,7 @@ function replacePlugin(config, name, plugin) {
 
 module.exports = {
   getPluginIndex: getPluginIndex, 
+  isPluginLoaded: isPluginLoaded,
   modifyPlugin: modifyPlugin, 
   replacePlugin: replacePlugin
 }

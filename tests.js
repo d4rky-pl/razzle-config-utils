@@ -1,5 +1,4 @@
 const assert = require('assert');
-const sinon = require('sinon')
 const utils = require('./index')
 
 function FakeWebpackPlugin(opts) { this.options = opts }
@@ -23,6 +22,9 @@ const webpackConfig = {
 
 // test getPluginIndex
 assert.equal(utils.getPluginIndex(webpackConfig, 'FakeWebpackPlugin'), 0)
+
+// test isPluginLoaded
+assert.ok(utils.isPluginLoaded(webpackConfig, 'FakeWebpackPlugin'))
 
 // test modifyPlugin
 utils.modifyPlugin(webpackConfig, 'FakeWebpackPlugin', function(plugin) {
