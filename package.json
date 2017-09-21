@@ -1,0 +1,24 @@
+{
+  "name": "razzle-config-utils",
+  "version": "0.0.1",
+  "description": "Collection of useful utilities for razzle.config.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d4rky-pl/razzle-config-utils.git"
+  },
+  "keywords": [
+    "razzle",
+    "webpack",
+    "webpack.config.js"
+  ],
+  "author": "Michał Matyas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/d4rky-pl/razzle-config-utils/issues"
+  },
+  "homepage": "https://github.com/d4rky-pl/razzle-config-utils#readme"
+}
