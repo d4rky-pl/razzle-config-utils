@@ -1,6 +1,6 @@
 {
   "name": "razzle-config-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Collection of useful utilities for razzle.config.js",
   "main": "index.js",
   "scripts": {

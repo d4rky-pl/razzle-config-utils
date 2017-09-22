@@ -22,6 +22,7 @@ const webpackConfig = {
 
 // test getPluginIndex
 assert.equal(utils.getPluginIndex(webpackConfig, 'FakeWebpackPlugin'), 0)
+assert.equal(utils.getPluginIndex(webpackConfig, 'NonExistentPlugin'), null)
 
 // test isPluginLoaded
 assert.ok(utils.isPluginLoaded(webpackConfig, 'FakeWebpackPlugin'))
@@ -32,6 +33,8 @@ utils.modifyPlugin(webpackConfig, 'FakeWebpackPlugin', function(plugin) {
 })
 
 assert.equal(webpackConfig.plugins[0].options.fake, false)
+
+assert.throws(() => utils.modifyPlugin(webpackConfig, 'NonExistentPlugin', function(){}))
 
 // test replacePlugin
 
