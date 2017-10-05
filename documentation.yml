@@ -5,6 +5,9 @@ toc:
       - isPluginLoaded
       - modifyPlugin
       - replacePlugin
+      - name: Callbacks
+        children:
+          - modifyPluginFn
   - name: Rules
     children:
       - getRuleIndexByTest
@@ -12,3 +15,6 @@ toc:
       - modifyRule
       - replaceRule
       - ignoreFileExtension
+      - name: Callbacks
+        children:
+          - modifyRuleFn

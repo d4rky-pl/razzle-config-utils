@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "test": "jest",
-    "doc": "documentation readme index.js --section=API --config documentation.yml"
+    "doc": "documentation readme index.js --section=API --config documentation.yml && markdown-toc -i README.md"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
   "homepage": "https://github.com/d4rky-pl/razzle-config-utils#readme",
   "devDependencies": {
     "documentation": "^5.3.2",
-    "jest": "^21.2.1"
+    "jest": "^21.2.1",
+    "markdown-toc": "^1.2.0"
   }
 }
