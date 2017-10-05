@@ -72,11 +72,11 @@ Modifies webpack plugin in place.
 
 ```javascript
 modifyPlugin(appConfig, 'StartServerPlugin', (plugin) => {
-  plugin.options.nodeArgs = ['--inspect']
+  plugin.options.nodeArgs = [Object']plugin - Plugin  
 })
 ```
 
--   Throws **any** an exception if it cannot find requested plugin
+-   Throws **[Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)** an exception if it cannot find requested plugin
 
 Returns **any** result of the callback
 
@@ -88,8 +88,7 @@ Replaces webpack plugin. If the plugin cannot be found, it's ignored.
 
 -   `config` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** webpack configuration
 -   `name` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Plugin name
--   `plugin`  
--   `fn` **[modifyPluginFn](#modifypluginfn)** 
+-   `plugin` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Plugin instance (ex. new MinifyPlugin())
 
 **Examples**
 
@@ -106,14 +105,14 @@ Returns **any** plugin
 
 ##### modifyPluginFn
 
-Function that will be invoked with found plugin
+Callback that will be invoked with found plugin.
 
 Type: [Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
 
 **Parameters**
 
--   `plugin` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
--   `plugin` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 's index
+-   `plugin` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** plugin
+-   `index` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** plugin's index
 
 ### Rules
 
@@ -167,7 +166,7 @@ modifyRule(appConfig, { test: /\.css$/ }, (rule) => {
 })
 ```
 
--   Throws **any** an exception if it cannot find requested rule
+-   Throws **[Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)** an exception if it cannot find requested rule
 
 Returns **any** result of the callback
 
@@ -184,7 +183,6 @@ to the second argument. If the rule cannot be found, it's ignored.
     -   `$1.test`  
     -   `$1.loader`  
 -   `rule`  
--   `fn` **[modifyRuleFn](#modifyrulefn)** 
 
 **Examples**
 
@@ -209,7 +207,6 @@ not support yet (SASS/Less, Handlebars, you name it)
 
 -   `config` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** webpack configuration
 -   `extension` **[RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)** file extension
--   `fn` **[modifyRuleFn](#modifyrulefn)** 
 
 **Examples**
 
@@ -226,11 +223,11 @@ Returns **any** rule
 
 ##### modifyRuleFn
 
-Function that will be invoked with found rule.
+Callback that will be invoked with found rule.
 
 Type: [Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
 
 **Parameters**
 
--   `rule` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
--   `rule` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 's index
+-   `rule` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** rule
+-   `index` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** rule's index
