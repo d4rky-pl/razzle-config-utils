@@ -1,0 +1,14 @@
+toc:
+  - name: Plugins
+    children:
+      - getPluginIndex
+      - isPluginLoaded
+      - modifyPlugin
+      - replacePlugin
+  - name: Rules
+    children:
+      - getRuleIndexByTest
+      - getRuleIndexByLoader
+      - modifyRule
+      - replaceRule
+      - ignoreFileExtension

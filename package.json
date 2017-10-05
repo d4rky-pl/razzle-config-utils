@@ -1,10 +1,16 @@
 {
   "name": "razzle-config-utils",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Collection of useful utilities for razzle.config.js",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "lib/plugins.js",
+    "lib/rules.js"
+  ],
   "scripts": {
-    "test": "node tests.js"
+    "test": "jest",
+    "doc": "documentation readme index.js --section=API --config documentation.yml"
   },
   "repository": {
     "type": "git",
@@ -20,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/d4rky-pl/razzle-config-utils/issues"
   },
-  "homepage": "https://github.com/d4rky-pl/razzle-config-utils#readme"
+  "homepage": "https://github.com/d4rky-pl/razzle-config-utils#readme",
+  "devDependencies": {
+    "documentation": "^5.3.2",
+    "jest": "^21.2.1"
+  }
 }
